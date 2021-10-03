@@ -1,0 +1,45 @@
+set -v
+
+sudo apt -y update
+sudo apt -y full-upgrade
+sudo apt -y autoremove
+
+git pull
+
+cd ../paint
+git pull
+cd build
+cmake ..
+make -j4
+cd ..
+
+cd ../filesystem
+git pull
+cd build
+cmake ..
+make -j4
+cd ..
+
+cd ../shared
+git pull
+
+cd ../openGL
+git pull
+
+cd tv
+make -j4
+
+cd ../hls
+make -j4
+
+cd ../dvblast
+make -j4
+
+cd ../../gpio
+git pull
+
+cd ../opt
+git pull
+
+ls -l
+cd ../linux

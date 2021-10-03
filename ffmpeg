@@ -1,0 +1,12 @@
+set -v
+
+cd ../FFmpeg
+git pull
+
+mkdir -p build
+cd build
+make -j4
+sudo make install
+ls -l
+
+cd ../../linux
