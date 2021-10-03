@@ -13,13 +13,6 @@ cmake ..
 make -j4
 cd ..
 
-cd filesystem
-cd build
-cmake ..
-make -j4
-cd ..
-cd ..
-
 cd ../shared
 git pull
 
