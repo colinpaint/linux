@@ -1,9 +1,8 @@
-set -v
-
-cd ../FFmpeg
-git pull
-
-mkdir -p build
+#set -v
+#cd ../FFmpeg
+#git pull
+#
+#mkdir -p build
 cd build
 ../configure \
   --disable-decoders --disable-encoders --disable-filters --disable-parsers --disable-protocols --disable-bsfs \
@@ -17,7 +16,7 @@ cd build
   --enable-outdev=sdl2 \
   --enable-gpl \
   --enable-nonfree \
-  --enable-libmfx \
+#  --enable-libmfx \
   --extra-cflags='-march=native'
 
 #  --extra-cflags='-mpu=neon-vfpv4 -mtune=cortex-a7' \

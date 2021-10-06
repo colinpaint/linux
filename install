@@ -5,28 +5,24 @@ sudo apt -y full-upgrade
 sudo apt -y autoremove
 sudo apt -y autoclean
 #
-sudo apt -y install g++ nasm pkgconf cmake autoconf automake build-essential cmake binutils-dev libtool
-sudo apt -y install git git-cola
-sudo apt -y install libglfw3-dev libglew-dev libgles2-mesa-dev mesa-utils libasound2-dev  
-sudo apt -y install freeglut3 freeglut3-dev
+sudo apt -y install g++ clang git gedit nasm pkg-conf cmake autoconf automake build-essential binutils-dev libtool 
+sudo apt -y install libglfw3-dev libglew-dev libgles2-mesa-dev mesa-utils libasound2-dev freeglut3 freeglut3-dev
 #
 sudo apt -y install libsdl2-2.0-0 libsdl2-image-2.0-0 libx264-dev libsdl2-dev libsdl2-image-dev
 sudo apt -y install libfreetype6-dev libfreetype6
-sudo apt -y install libmfx-dev libva-dev
-sudo apt -y install libfdk-aac-dev
+sudo apt -y install libmfx-dev libva-dev libfdk-aac-dev
 #
-sudo apt -y install clang
-sudo apt -y install samba smbclient libsmbclient-dev matchbox-keyboard smartmontools gparted
+sudo apt -y install samba smbclient libsmbclient-dev gparted
 sudo apt -y install acpi iotop nethogs
 #
 cd ..
-git clone https://github.com/colinporth/shared
-git clone https://github.com/colinporth/openGL
+git clone https://github.com/colinpaint/shared
+git clone https://github.com/colinpaint/openGL
 git clone https://github.com/FFmpeg/FFmpeg
-git clone https://github.com/colinporth/gpio
-git clone https://github.com/colinporth/opt
+#git clone https://github.com/colinporth/gpio
+#git clone https://github.com/colinporth/opt
 
-mkdir -p tv
-chmod 0777 tv
+#mkdir -p tv
+#chmod 0777 tv
 
 cd linux
