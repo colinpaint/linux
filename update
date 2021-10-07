@@ -4,8 +4,7 @@ sudo apt -y update
 sudo apt -y full-upgrade
 sudo apt -y autoremove
 #
-git pull
-#
+
 cd ../paint
 git pull
 #
