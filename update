@@ -12,18 +12,22 @@ cd build
 cmake ..
 make -j4
 cd ..
+cd ..
 #
-cd ../shared
+cd shared
+git pull
+cd ..
+#
+cd opengl
 git pull
 #
-cd ../openGL
-git pull
+cd hls
+make -j4
+cd ..
 #
 cd tv
 make -j4
-#
-cd ../hls
-make -j4
+cd ..
 #
 ls -l
 cd ../linux
