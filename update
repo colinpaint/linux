@@ -11,23 +11,4 @@ git pull
 cd build
 cmake ..
 make -j4
-cd ..
-cd ..
-#
-cd shared
-git pull
-cd ..
-#
-cd opengl
-git pull
-#
-cd hls
-make -j4
-cd ..
-#
-cd tv
-make -j4
-cd ..
-#
-ls -l
-cd ../linux
+cd ../../linux
