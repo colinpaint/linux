@@ -16,9 +16,11 @@ cd build
   --enable-outdev=sdl2 \
   --enable-gpl \
   --enable-nonfree \
-#  --enable-libmfx \
-  --extra-cflags='-march=native'
+  --extra-cflags='-march=native' \
+  --enable-libmfx 
 
+#
+#
 #  --extra-cflags='-mpu=neon-vfpv4 -mtune=cortex-a7' \
 #  --enable-neon \
 #  --cpu=cortex-a7 \
