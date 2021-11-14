@@ -32,11 +32,12 @@ git clone https://github.com/libsdl-org/SDL
 git clone https://github.com/Intel-Media-SDK/MediaSDK
 git clone https://github.com/intel/libva
 git clone https://github.com/intel/libva-utils
-git clone https://gitlab.freedesktop.org/drm/igt-gpu-tools
-git clone https://github.com/intel/intel-vaapi-driver
 git clone https://github.com/intel/gmmlib
 git clone https://github.com/intel/media-driver/
 git clone https://github.com/mpv-player/mpv
+#
+git clone https://github.com/intel/intel-vaapi-driver
+#git clone https://gitlab.freedesktop.org/drm/igt-gpu-tools
 #
 #git clone https://github.com/colinporth/gpio
 #git clone https://github.com/colinporth/opt
