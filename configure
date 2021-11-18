@@ -14,6 +14,7 @@ cd build
   --enable-bsf=aac_adtstoasc \
   --enable-filter=transpose,aresample \
   --enable-outdev=sdl2 \
+  --enable-libfdk-aac \
   --enable-gpl \
   --enable-nonfree \
   --extra-cflags='-march=native' 
