@@ -4,11 +4,21 @@ sudo apt -y update
 sudo apt -y full-upgrade
 sudo apt -y autoremove
 #
-
+#
 cd ../paint
 git pull
-#
 cd build
 cmake ..
 make -j4
+#
 cd ../../linux
+#
+#
+cd ../myimgui
+git pull
+cd build
+cmake ..
+make -j4
+#
+cd ../../linux
+#
