@@ -1,9 +1,11 @@
 set -v
+#
 cd ../FFmpeg
 git pull
 #
 mkdir -p build
 cd build
+#
 ../configure \
   --disable-decoders --disable-encoders --disable-filters --disable-parsers --disable-protocols --disable-bsfs \
   --disable-demuxers --disable-muxers   --disable-indevs  --disable-outdevs --disable-doc --disable-ffprobe \
@@ -18,12 +20,8 @@ cd build
   --enable-gpl \
   --enable-nonfree \
   --extra-cflags='-march=native' 
-
+#
 #  --enable-libmfx 
-#  --disable-vaapi --disable-vdpau \
-#  --extra-cflags='-mpu=neon-vfpv4 -mtune=cortex-a7' \
-#  --enable-neon \
-#  --cpu=cortex-a7 \
-
+#
 cd ../../linux
-
+#

@@ -1,10 +1,11 @@
 set -v
-
+#
 cd ../FFmpeg
 git pull
-
+#
 mkdir -p build
 cd build
+#
 ../configure \
   --disable-decoders --disable-encoders --disable-filters --disable-parsers --disable-protocols --disable-bsfs \
   --disable-demuxers --disable-muxers   --disable-indevs  --disable-outdevs --disable-doc --disable-ffprobe \
@@ -15,12 +16,11 @@ cd build
   --enable-bsf=aac_adtstoasc \
   --enable-filter=transpose,aresample \
   --enable-outdev=sdl2 \
+  --enable-libfdk-aac \
   --enable-gpl \
   --enable-nonfree \
-  --enable-neon \
-  --extra-cflags='-march=native' \
-
-#  --extra-cflags='-mfpu=neon-vfpv4 -march=native' \
-
+  --extra-cflags='-march=native' \ 
+  --enable-neon 
+#
 cd ../../linux
-
+#

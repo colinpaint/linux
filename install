@@ -29,20 +29,27 @@ git clone https://github.com/FFmpeg/FFmpeg
 git clone https://github.com/glfw/glfw
 git clone https://github.com/libsdl-org/SDL
 #
-git clone https://github.com/Intel-Media-SDK/MediaSDK
-git clone https://github.com/intel/libva
-git clone https://github.com/intel/libva-utils
-git clone https://github.com/intel/gmmlib
-git clone https://github.com/intel/media-driver
-git clone https://github.com/mpv-player/mpv
+OS=$(uname -m)
+echo "$OS"
+if [ "$OS" == "armv7l" ]; then
+  echo "raspberry pi"
+  #git clone https://github.com/colinporth/gpio  
+  #git clone https://github.com/colinporth/opt
+else 
+  echo "Not raspberry pi"
+  git clone https://github.com/Intel-Media-SDK/MediaSDK
+  git clone https://github.com/intel/libva
+  git clone https://github.com/intel/libva-utils
+  git clone https://github.com/intel/gmmlib
+  git clone https://github.com/intel/media-driver
+  git clone https://github.com/intel/intel-vaapi-driver
+  git clone https://github.com/mpv-player/mpv
+fi
 #
-git clone https://github.com/intel/intel-vaapi-driver
 #git clone https://gitlab.freedesktop.org/drm/igt-gpu-tools
-#
-#git clone https://github.com/colinporth/gpio
-#git clone https://github.com/colinporth/opt
 #
 mkdir -p tv
 chmod 0777 tv
 #
 cd linux
+#
