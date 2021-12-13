@@ -31,7 +31,7 @@ git clone https://github.com/libsdl-org/SDL
 #
 OS=$(uname -m)
 echo "$OS"
-if [ "$OS" == "armv7l" ]; then
+if [ "$OS" == "aarch64" ]; then
   echo "raspberry pi"
   #git clone https://github.com/colinporth/gpio  
   #git clone https://github.com/colinporth/opt

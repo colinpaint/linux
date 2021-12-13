@@ -1,5 +1,6 @@
 sed -i 's/\r//g' FileWithCarriageReturns.sh
 
+# ssh -l username hostname
 ssh -l pi pi
 
 sudo nano /boot/cmdline.txt
