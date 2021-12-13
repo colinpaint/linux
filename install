@@ -24,12 +24,14 @@ sudo apt -y install libwayland-dev libxkbcommon-dev wayland-protocols extra-cmak
 #
 cd ..
 git clone https://github.com/colinpaint/paint
+git clone https://github.com/colinpaint/myimgui
 git clone https://github.com/ocornut/imgui
 git clone https://github.com/FFmpeg/FFmpeg
 git clone https://github.com/glfw/glfw
 git clone https://github.com/libsdl-org/SDL
 #
-OS=$(uname -m)
+#
+OS = $(uname -m)
 echo "$OS"
 if [ "$OS" == "aarch64" ]; then
   echo "raspberry pi"
@@ -44,9 +46,9 @@ else
   git clone https://github.com/intel/media-driver
   git clone https://github.com/intel/intel-vaapi-driver
   git clone https://github.com/mpv-player/mpv
+  #git clone https://gitlab.freedesktop.org/drm/igt-gpu-tools
 fi
 #
-#git clone https://gitlab.freedesktop.org/drm/igt-gpu-tools
 #
 mkdir -p tv
 chmod 0777 tv

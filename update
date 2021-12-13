@@ -1,5 +1,6 @@
 set -v
 #
+#
 sudo apt -y update
 sudo apt -y full-upgrade
 sudo apt -y autoremove
@@ -7,18 +8,18 @@ sudo apt -y autoremove
 #
 cd ../paint
 git pull
+mkdir -p build
 cd build
 cmake ..
 make -j4
-#
 cd ../../linux
 #
 #
 cd ../myimgui
 git pull
+mkdir -p build
 cd build
 cmake ..
 make -j4
-#
 cd ../../linux
 #
