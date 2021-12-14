@@ -31,7 +31,7 @@ git clone https://github.com/glfw/glfw
 git clone https://github.com/libsdl-org/SDL
 #
 #
-OS = $(uname -m)
+OS=$(uname -m)
 echo "$OS"
 if [ "$OS" == "aarch64" ]; then
   echo "raspberry pi"

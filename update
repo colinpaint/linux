@@ -6,6 +6,15 @@ sudo apt -y full-upgrade
 sudo apt -y autoremove
 #
 #
+OS=$(uname -m)
+echo "$OS"
+if [ "$OS" == "aarch64" ]; then
+  echo "raspberry pi"
+ else 
+  echo "Not raspberry pi"
+fi
+#
+#
 cd ../paint
 git pull
 mkdir -p build
