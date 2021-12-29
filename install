@@ -19,13 +19,15 @@ sudo apt -y install libmfx-dev libva-dev vainfo
 sudo apt -y install mpv
 sudo apt -y install libwayland-dev libxkbcommon-dev wayland-protocols extra-cmake-modules
 #
+sudo apt -y install vulkan-tools libvulkan-dev vulkan-validationlayers-dev spirv-tools
+#
 #sudo apt -y install pkg-conf 
 #sudo apt -y install samba smbclient libsmbclient-dev gparted 
 #
 cd ..
 git clone https://github.com/colinpaint/paint
 git clone https://github.com/colinpaint/myimgui
-git clone https://github.com/ocornut/imgui
+#git clone https://github.com/ocornut/imgui
 git clone https://github.com/FFmpeg/FFmpeg
 git clone https://github.com/glfw/glfw
 git clone https://github.com/libsdl-org/SDL
