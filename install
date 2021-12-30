@@ -5,42 +5,46 @@ sudo apt -y full-upgrade
 sudo apt -y autoremove
 sudo apt -y autoclean
 #
-sudo apt -y install git g++ clang nasm gdb build-essential binutils-dev autoconf libtool
+sudo apt -y install build-essential git g++ clang nasm gdb binutils-dev 
+sudo apt -y install pkg-conf autoconf libtool 
 sudo apt -y install cmake cmake-curses-gui
 sudo apt -y install gedit
-sudo apt -y install htop iotop hardinfo psensor acpi iotop nethogs
+sudo apt -y install htop iotop hardinfo psensor acpi iotop nethogs gparted 
 #
-sudo apt -y install libglfw3-dev libglew-dev libgles2-mesa-dev mesa-utils libasound2-dev freeglut3 freeglut3-dev
-sudo apt -y install libsdl2-2.0-0 libsdl2-image-2.0-0 libx264-dev libsdl2-dev libsdl2-image-dev
-sudo apt -y install libfdk-aac-dev
+sudo apt -y install libglfw3-dev libgles2-mesa-dev mesa-utils libasound2-dev 
+sudo apt -y install libglew-dev freeglut3 freeglut3-dev
+sudo apt -y install libsdl2-dev libsdl2-image-dev
 sudo apt -y install libfreetype6-dev libfreetype6
+sudo apt -y install libfdk-aac-dev libx264-dev 
 #
 sudo apt -y install libmfx-dev libva-dev vainfo
 sudo apt -y install mpv
 sudo apt -y install libwayland-dev libxkbcommon-dev wayland-protocols extra-cmake-modules
 #
 sudo apt -y install vulkan-tools libvulkan-dev vulkan-validationlayers-dev spirv-tools
+sudo apt -y install libvorbis-dev libmad0-dev libx11-xcb-dev
 #
-#sudo apt -y install pkg-conf 
-#sudo apt -y install samba smbclient libsmbclient-dev gparted 
+#sudo apt -y install samba smbclient libsmbclient-dev 
 #
 cd ..
 git clone https://github.com/colinpaint/paint
 git clone https://github.com/colinpaint/myimgui
-#git clone https://github.com/ocornut/imgui
 git clone https://github.com/FFmpeg/FFmpeg
 git clone https://github.com/glfw/glfw
-git clone https://github.com/libsdl-org/SDL
+#git clone https://github.com/ocornut/imgui
 #
+git clone https://github.com/libsdl-org/SDL
+git clone https://github.com/Novum/vkQuake
 #
 OS=$(uname -m)
 echo "$OS"
 if [ "$OS" == "aarch64" ]; then
-  echo "raspberry pi"
+  echo "Installing raspberry pi"
+  sudo apt -y install libvulkan1 mesa-vulkan-drivers
   #git clone https://github.com/colinporth/gpio  
   #git clone https://github.com/colinporth/opt
 else 
-  echo "Not raspberry pi"
+  echo "Installing not raspberry pi"
   git clone https://github.com/Intel-Media-SDK/MediaSDK
   git clone https://github.com/intel/libva
   git clone https://github.com/intel/libva-utils
@@ -49,8 +53,14 @@ else
   git clone https://github.com/intel/intel-vaapi-driver
   git clone https://github.com/mpv-player/mpv
   #git clone https://gitlab.freedesktop.org/drm/igt-gpu-tools
+  #
+  #git clone https://github.com/baldurk/renderdoc   
+  #sudo apt -y install libx11-dev libx11-xcb-dev mesa-common-dev libgl1-mesa-dev libxcb-keysyms1-dev libpcre3-dev 
+  #sudo apt -y install python3-dev bison automake
+  #sudo apt -y install qt5-qmake libqt5svg5-dev libqt5x11extras5-dev 
+  #cmake -DCMAKE_BUILD_TYPE=Debug -Bbuild -H.
+  #make -C build
 fi
-#
 #
 mkdir -p tv
 chmod 0777 tv
