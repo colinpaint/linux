@@ -7,9 +7,10 @@ sudo apt -y autoclean
 # 
 # dev tools
 sudo apt -y install build-essential git g++ clang nasm gdb binutils-dev 
-sudo apt -y install pkg-conf autoconf libtool 
 sudo apt -y install cmake cmake-curses-gui
+sudo apt -y install autoconf libtool 
 sudo apt -y install gedit
+sudo apt -y install pkg-conf  
 #
 # utils
 sudo apt -y install htop iotop hardinfo psensor acpi iotop nethogs gparted 
@@ -58,6 +59,8 @@ git clone https://github.com/FFmpeg/FFmpeg
 git clone https://github.com/Novum/vkQuake
 git clone https://github.com/kondrak/vkQuake2
 git clone https://github.com/suijingfeng/vkQuake3
+#git clone https://github.com/drags/docker-quake2
+#git clone https://github.com/nrempel/q3-server
 #
 OS=$(uname -m)
 echo "$OS"
