@@ -4,37 +4,60 @@ sudo apt -y update
 sudo apt -y full-upgrade
 sudo apt -y autoremove
 sudo apt -y autoclean
-#
+# 
+# dev tools
 sudo apt -y install build-essential git g++ clang nasm gdb binutils-dev 
 sudo apt -y install pkg-conf autoconf libtool 
 sudo apt -y install cmake cmake-curses-gui
 sudo apt -y install gedit
+#
+# utils
 sudo apt -y install htop iotop hardinfo psensor acpi iotop nethogs gparted 
 #
+# opengl 
 sudo apt -y install libglfw3-dev libgles2-mesa-dev mesa-utils libasound2-dev 
 sudo apt -y install libglew-dev freeglut3 freeglut3-dev
+#
+# sdl
 sudo apt -y install libsdl2-dev libsdl2-image-dev
+#
+# freetype
 sudo apt -y install libfreetype6-dev libfreetype6
+#
+# ffmpeg libs
 sudo apt -y install libfdk-aac-dev libx264-dev 
 #
-sudo apt -y install libmfx-dev libva-dev vainfo
-sudo apt -y install mpv
+# wayland
 sudo apt -y install libwayland-dev libxkbcommon-dev wayland-protocols extra-cmake-modules
 #
+# vaapi
+sudo apt -y install libva-dev vainfo
+sudo apt -y install mpv
+
+# vulkan
 sudo apt -y install vulkan-tools libvulkan-dev vulkan-validationlayers-dev spirv-tools
-sudo apt -y install libvorbis-dev libmad0-dev libx11-xcb-dev
+#
+# quake dependencies
+sudo apt -y install libgl1-mesa-dev libglu1-mesa-dev libxxf86dga-dev libxxf86vm-dev libx11-xcb-dev libxcb1-dev
+sudo apt -y install libcurl4-openssl-dev 
+sudo apt -y install libopenal-dev 
+sudo apt -y install libopus-dev libvorbis-dev libopusfile-dev libmad0-dev 
 #
 #sudo apt -y install samba smbclient libsmbclient-dev 
 #
 cd ..
 git clone https://github.com/colinpaint/paint
 git clone https://github.com/colinpaint/myimgui
-git clone https://github.com/FFmpeg/FFmpeg
-git clone https://github.com/glfw/glfw
 #git clone https://github.com/ocornut/imgui
 #
+git clone https://github.com/glfw/glfw
 git clone https://github.com/libsdl-org/SDL
+git clone https://github.com/FFmpeg/FFmpeg
+#
+# quake gits
 git clone https://github.com/Novum/vkQuake
+git clone https://github.com/kondrak/vkQuake2
+git clone https://github.com/suijingfeng/vkQuake3
 #
 OS=$(uname -m)
 echo "$OS"
@@ -45,15 +68,25 @@ if [ "$OS" == "aarch64" ]; then
   #git clone https://github.com/colinporth/opt
 else 
   echo "Installing not raspberry pi"
+  #
+  # enable ssh
+  sudo apt -y install openssh-server
+  sudo systemctl status ssh
+  #sudo ufw allow ssh
+  #
   git clone https://github.com/Intel-Media-SDK/MediaSDK
   git clone https://github.com/intel/libva
   git clone https://github.com/intel/libva-utils
-  git clone https://github.com/intel/gmmlib
-  git clone https://github.com/intel/media-driver
-  git clone https://github.com/intel/intel-vaapi-driver
-  git clone https://github.com/mpv-player/mpv
+  #
+  # intel vaapi/mfx dev
+  sudo apt -y install libmfx-dev 
+  #git clone https://github.com/intel/gmmlib
+  #git clone https://github.com/intel/media-driver
+  #git clone https://github.com/intel/intel-vaapi-driver
+  #git clone https://github.com/mpv-player/mpv
   #git clone https://gitlab.freedesktop.org/drm/igt-gpu-tools
   #
+  # renderdoc dev
   #git clone https://github.com/baldurk/renderdoc   
   #sudo apt -y install libx11-dev libx11-xcb-dev mesa-common-dev libgl1-mesa-dev libxcb-keysyms1-dev libpcre3-dev 
   #sudo apt -y install python3-dev bison automake
