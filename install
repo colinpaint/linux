@@ -73,9 +73,11 @@ else
   echo "Installing not raspberry pi"
   #
   # enable ssh
-  sudo apt -y install openssh-server
-  sudo systemctl status ssh
+  #sudo apt -y install openssh-server
+  #sudo systemctl status ssh
   #sudo ufw allow ssh
+  #  
+  git clone https://github.com/axiomatic-systems/Bento4.git
   #
   git clone https://github.com/Intel-Media-SDK/MediaSDK
   git clone https://github.com/intel/libva
