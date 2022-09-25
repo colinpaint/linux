@@ -49,6 +49,7 @@ sudo apt -y install libopus-dev libvorbis-dev libopusfile-dev libmad0-dev
 cd ..
 git clone https://github.com/colinpaint/paint
 git clone https://github.com/colinpaint/myimgui
+git clone https://github.com/ramcorder/ramcorder
 #git clone https://github.com/ocornut/imgui
 #
 git clone https://github.com/glfw/glfw
@@ -56,9 +57,9 @@ git clone https://github.com/libsdl-org/SDL
 git clone https://github.com/FFmpeg/FFmpeg
 #
 # quake gits
-git clone https://github.com/Novum/vkQuake
-git clone https://github.com/kondrak/vkQuake2
-git clone https://github.com/suijingfeng/vkQuake3
+#git clone https://github.com/Novum/vkQuake
+#git clone https://github.com/kondrak/vkQuake2
+#git clone https://github.com/suijingfeng/vkQuake3
 #git clone https://github.com/drags/docker-quake2
 #git clone https://github.com/nrempel/q3-server
 #
@@ -77,14 +78,14 @@ else
   #sudo systemctl status ssh
   #sudo ufw allow ssh
   #  
-  git clone https://github.com/axiomatic-systems/Bento4.git
+  #git clone https://github.com/axiomatic-systems/Bento4.git
   #
-  git clone https://github.com/Intel-Media-SDK/MediaSDK
-  git clone https://github.com/intel/libva
-  git clone https://github.com/intel/libva-utils
+  #git clone https://github.com/Intel-Media-SDK/MediaSDK
+  #git clone https://github.com/intel/libva
+  #git clone https://github.com/intel/libva-utils
   #
   # intel vaapi/mfx dev
-  sudo apt -y install libmfx-dev 
+  #sudo apt -y install libmfx-dev 
   #git clone https://github.com/intel/gmmlib
   #git clone https://github.com/intel/media-driver
   #git clone https://github.com/intel/intel-vaapi-driver

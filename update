@@ -22,31 +22,7 @@ cd ../glfw
 git pull
 cd ../linux
 #
-cd ../libva
-git pull
-cd ../linux
-#
-cd ../libva-utils
-git pull
-cd ../linux
-#
-cd ../MediaSDK
-git pull
-cd ../linux
-#
 cd ../imgui
-git pull
-cd ../linux
-#
-cd ../rubberband
-git pull
-cd ../linux
-#
-cd ../media-driver
-git pull
-cd ../linux
-#
-cd ../ipt-gpu-tools
 git pull
 cd ../linux
 #
@@ -57,7 +33,6 @@ cd build
 cmake ..
 make -j4
 cd ../../linux
-#
 #
 cd ../myimgui
 git pull
