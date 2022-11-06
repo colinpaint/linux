@@ -1,0 +1,20 @@
+set -v
+#
+sudo apt install git cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential libstdc++-arm-none-eabi-newlib
+#
+cd ..
+mkdir pico
+cd pico
+#
+git clone -b master https://github.com/raspberrypi/pico-sdk.git --recursive
+git clone -b master https://github.com/raspberrypi/pico-examples.git
+#
+git clone -b main https://github.com/pimoroni/pimoroni-pico.git --recursive
+git clone -b main https://github.com/pimoroni/picosystem.git
+#
+export PICO_SDK_PATH=../../pico-sdk
+#
+cd pico-examples
+mkdir build
+cd build
+#
