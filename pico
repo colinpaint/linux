@@ -8,6 +8,7 @@ cd pico
 #
 git clone -b master https://github.com/raspberrypi/pico-sdk.git --recursive
 git clone -b master https://github.com/raspberrypi/pico-examples.git
+git clone -b master https://github.com/raspberrypi/pico-extras.git --recursive
 #
 git clone -b main https://github.com/pimoroni/pimoroni-pico.git --recursive
 git clone -b main https://github.com/pimoroni/picosystem.git

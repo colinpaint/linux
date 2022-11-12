@@ -42,3 +42,16 @@ cmake ..
 make -j4
 cd ../../linux
 #
+cd ../pico
+cd pico-examples
+git pull
+cd../pico-sdk
+git pull
+cd../pico-extras
+git pull
+cd../picosystem
+git pull
+cd../pimoroni-pico
+git pull
+cd ../../linux
+#
