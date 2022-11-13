@@ -13,6 +13,8 @@ git clone -b master https://github.com/raspberrypi/pico-extras.git --recursive
 git clone -b main https://github.com/pimoroni/pimoroni-pico.git --recursive
 git clone -b main https://github.com/pimoroni/picosystem.git
 #
+git clone https://github.com/ZuluSCSI/ZuluSCSI-firmware
+#
 export PICO_SDK_PATH=../../pico-sdk
 #
 cd pico-examples
@@ -21,4 +23,3 @@ cd build
 #
 cmake ..
 make -j 8
-
