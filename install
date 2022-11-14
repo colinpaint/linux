@@ -49,7 +49,7 @@ sudo apt -y install libopus-dev libvorbis-dev libopusfile-dev libmad0-dev
 cd ..
 git clone https://github.com/colinpaint/paint
 git clone https://github.com/colinpaint/myimgui
-git clone https://github.com/ramcorder/ramcorder
+#git clone https://github.com/ramcorder/ramcorder
 #git clone https://github.com/ocornut/imgui
 #
 git clone https://github.com/glfw/glfw
@@ -105,4 +105,3 @@ mkdir -p tv
 chmod 0777 tv
 #
 cd linux
-#
