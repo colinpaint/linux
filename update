@@ -24,6 +24,8 @@ cd glfw
 git pull
 cd ..
 #
+# imgui
+#
 cd imgui
 git pull
 cd ..
@@ -54,35 +56,40 @@ cd pico
 #
 cd pico-examples
 git pull
+mkdir -p build
 cd build
-make -j8
+make -j4
 cd ../..
 #
 cd pico-sdk
 git pull
+mkdir -p build
 cd build
-make -j8
+make -j4
 cd ../..
 #
 cd pico-extras
 git pull
 cd build
-make -j8
+make -j4
 cd ../..
 #
 cd picosystem
 git pull
+mkdir -p build
 cd build
-make -j8
+make -j4
 cd ../..
 #
 cd pimoroni-pico
 git pull
+mkdir -p build
 cd build
-make -j8
+make -j4
 cd ../..
 #
 cd ZuluSCSI-firmware
 git pull
-cd ../../linux
+cd ..
 #
+cd ../linux
