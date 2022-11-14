@@ -17,9 +17,38 @@ git clone https://github.com/ZuluSCSI/ZuluSCSI-firmware
 #
 export PICO_SDK_PATH=../../pico-sdk
 #
-cd pico-examples
-mkdir build
+cd pico-sdk
+mkdir -p build
 cd build
-#
 cmake ..
 make -j 8
+cd ../..
+#
+cd pico-examples
+mkdir -p build
+cd build
+cmake ..
+make -j 8
+cd ../..
+#
+cd pico-extras
+mkdir -p build
+cd build
+cmake ..
+make -j 8
+cd ../..
+#
+cd pimoroni-pico
+mkdir -p build
+cd build
+cmake ..
+make -j 8
+cd ../..
+#
+cd picosystem
+mkdir -p build
+cd build
+cmake ..
+make -j 8
+cd ../..
+

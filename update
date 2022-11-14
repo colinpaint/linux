@@ -14,53 +14,75 @@ if [ "$OS" == "aarch64" ]; then
   echo "Not raspberry pi"
 fi
 #
-cd ../SDL
-git pull
-cd ../linux
+cd ..
 #
-cd ../glfw
+cd SDL
 git pull
-cd ../linux
+cd ..
 #
-cd ../imgui
+cd glfw
 git pull
-cd ../linux
+cd ..
 #
-cd ../paint
+cd imgui
 git pull
-mkdir -p build
-cd build
-cmake ..
-make -j4
-cd ../../linux
+cd ..
 #
-cd ../myimgui
+# paint
+#
+cd paint
 git pull
 mkdir -p build
 cd build
 cmake ..
 make -j4
-cd ../../linux
+cd ../..
 #
-cd ../pico
+# myimgui
+#
+cd myimgui
+git pull
+mkdir -p build
+cd build
+cmake ..
+make -j4
+cd ../..
+#
+# pico
+#
+cd pico
+#
 cd pico-examples
 git pull
+cd build
+make -j8
+cd ../..
 #
-cd ../pico-sdk
-git pull
-#
-cd ../pico-extras
-git pull
-#
-cd ../picosystem
-git pull
-#
-cd ../ZuluSCSI-firmware
-git pull
-#
-cd ../pimoroni-pico
+cd pico-sdk
 git pull
 cd build
-make -j4
+make -j8
+cd ../..
 #
-cd ../../../linux
+cd pico-extras
+git pull
+cd build
+make -j8
+cd ../..
+#
+cd picosystem
+git pull
+cd build
+make -j8
+cd ../..
+#
+cd pimoroni-pico
+git pull
+cd build
+make -j8
+cd ../..
+#
+cd ZuluSCSI-firmware
+git pull
+cd ../../linux
+#
