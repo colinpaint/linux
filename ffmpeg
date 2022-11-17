@@ -8,5 +8,7 @@ cd build
 make -j4
 sudo make install
 ls -l
-
-cd ../../linux
+#
+cd ..
+cd ..
+cd linux

@@ -33,17 +33,20 @@ sudo apt -y install libwayland-dev libxkbcommon-dev wayland-protocols extra-cmak
 #
 # vaapi
 sudo apt -y install libva-dev vainfo
+#
+# mpv
 sudo apt -y install mpv
 
 # vulkan
 sudo apt -y install vulkan-tools libvulkan-dev vulkan-validationlayers-dev spirv-tools
 #
-# quake dependencies
+# quake 
 sudo apt -y install libgl1-mesa-dev libglu1-mesa-dev libxxf86dga-dev libxxf86vm-dev libx11-xcb-dev libxcb1-dev
 sudo apt -y install libcurl4-openssl-dev 
 sudo apt -y install libopenal-dev 
 sudo apt -y install libopus-dev libvorbis-dev libopusfile-dev libmad0-dev 
 #
+# samba
 #sudo apt -y install samba smbclient libsmbclient-dev 
 #
 cd ..

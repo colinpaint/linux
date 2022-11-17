@@ -5,7 +5,6 @@ sudo apt -y update
 sudo apt -y full-upgrade
 sudo apt -y autoremove
 #
-#
 OS=$(uname -m)
 echo "$OS"
 if [ "$OS" == "aarch64" ]; then
@@ -16,22 +15,22 @@ fi
 #
 cd ..
 #
+# SDL
 cd SDL
 git pull
 cd ..
 #
+# glfw
 cd glfw
 git pull
 cd ..
 #
 # imgui
-#
 cd imgui
 git pull
 cd ..
 #
 # paint
-#
 cd paint
 git pull
 mkdir -p build
@@ -41,7 +40,6 @@ make -j4
 cd ../..
 #
 # myimgui
-#
 cd myimgui
 git pull
 mkdir -p build
@@ -51,9 +49,7 @@ make -j4
 cd ../..
 #
 # pico
-#
 cd pico
-#
 cd pico-examples
 git pull
 mkdir -p build
