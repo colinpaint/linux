@@ -14,78 +14,104 @@ if [ "$OS" == "aarch64" ]; then
 fi
 #
 cd ..
-#
+# ---------------------
 # SDL
+#
 cd SDL
-git pull
-cd ..
-#
-# glfw
-cd glfw
-git pull
-cd ..
-#
-# imgui
-cd imgui
-git pull
-cd ..
-#
-# paint
-cd paint
 git pull
 mkdir -p build
 cd build
 cmake ..
 make -j4
-cd ../..
+sudo make install
+cd ..
+cd ..
+# ---------------------
+# glfw
 #
+cd glfw
+git pull
+mkdir -p build
+cd build
+cmake ..
+make -j4
+sudo make install
+cd ..
+cd ..
+# ---------------------
+# imgui
+#
+cd imgui
+git pull
+cd ..
+# ---------------------
 # myimgui
+#
 cd myimgui
 git pull
 mkdir -p build
 cd build
 cmake ..
 make -j4
-cd ../..
+cd ..
+cd ..
+# ---------------------
+# paint
 #
+cd paint
+git pull
+mkdir -p build
+cd build
+cmake ..
+make -j4
+cd ..
+cd ..
+# ---------------------
 # pico
+#
 cd pico
 cd pico-examples
 git pull
 mkdir -p build
 cd build
 make -j4
-cd ../..
+cd ..
+cd ..
 #
 cd pico-sdk
 git pull
 mkdir -p build
 cd build
 make -j4
-cd ../..
+cd ..
+cd ..
 #
 cd pico-extras
 git pull
 cd build
 make -j4
-cd ../..
+cd ..
+cd ..
 #
 cd picosystem
 git pull
 mkdir -p build
 cd build
 make -j4
-cd ../..
+cd ..
+cd ..
 #
 cd pimoroni-pico
 git pull
 mkdir -p build
 cd build
 make -j4
-cd ../..
+cd ..
+cd ..
 #
 cd ZuluSCSI-firmware
 git pull
+cd ..
 cd ..
 #
 cd ../linux

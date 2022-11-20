@@ -1,9 +1,15 @@
-sed -i 's/\r//g' FileWithCarriageReturns.sh
+# fix cr lf
+sed -i 's/\r//g' FileWithCarriasudo geReturns.sh
 
+# login script
+gedit ./etc/profile
+#
+# ssh to pi
 ssh -l username hostname
 ssh -l pi       new
 ssh -l pi       pi
-
+#
+# pi boot aprams
 sudo nano /boot/cmdline.txt
 logo.nologo
 init=/usr/lib/raspi-config/init_resize.sh
