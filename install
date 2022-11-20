@@ -6,11 +6,9 @@ sudo apt -y autoremove
 sudo apt -y autoclean
 # 
 # dev tools
-sudo apt -y install build-essential git g++ clang nasm gdb binutils-dev 
+sudo apt -y install build-essential git g++ clang nasm gdb binutils-dev pkg-conf
 sudo apt -y install cmake cmake-curses-gui
-sudo apt -y install autoconf libtool 
-sudo apt -y install gedit
-sudo apt -y install pkg-conf  
+sudo apt -y install autoconf libtool gedit   
 #
 # utils
 sudo apt -y install htop iotop hardinfo psensor acpi iotop nethogs gparted 
@@ -40,26 +38,24 @@ sudo apt -y install mpv
 # vulkan
 sudo apt -y install vulkan-tools libvulkan-dev vulkan-validationlayers-dev spirv-tools
 #
-# quake 
-sudo apt -y install libgl1-mesa-dev libglu1-mesa-dev libxxf86dga-dev libxxf86vm-dev libx11-xcb-dev libxcb1-dev
-sudo apt -y install libcurl4-openssl-dev 
-sudo apt -y install libopenal-dev 
-sudo apt -y install libopus-dev libvorbis-dev libopusfile-dev libmad0-dev 
 #
 # samba
 #sudo apt -y install samba smbclient libsmbclient-dev 
 #
 cd ..
+git clone https://github.com/glfw/glfw
+git clone https://github.com/libsdl-org/SDL
+git clone https://github.com/FFmpeg/FFmpeg
+#
 git clone https://github.com/colinpaint/paint
 git clone https://github.com/colinpaint/myimgui
 #git clone https://github.com/ramcorder/ramcorder
 #git clone https://github.com/ocornut/imgui
 #
-git clone https://github.com/glfw/glfw
-git clone https://github.com/libsdl-org/SDL
-git clone https://github.com/FFmpeg/FFmpeg
-#
-# quake gits
+# quake 
+#sudo apt -y install libgl1-mesa-dev libglu1-mesa-dev libxxf86dga-dev libxxf86vm-dev 
+#sudo apt -y install libx11-xcb-dev libxcb1-dev libcurl4-openssl-dev 
+#sudo apt -y install libopenal-dev libopus-dev libvorbis-dev libopusfile-dev libmad0-dev 
 #git clone https://github.com/Novum/vkQuake
 #git clone https://github.com/kondrak/vkQuake2
 #git clone https://github.com/suijingfeng/vkQuake3
