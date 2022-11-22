@@ -43,14 +43,14 @@ sudo apt -y install vulkan-tools libvulkan-dev vulkan-validationlayers-dev spirv
 #sudo apt -y install samba smbclient libsmbclient-dev 
 #
 cd ..
-git clone https://github.com/glfw/glfw
-git clone https://github.com/libsdl-org/SDL
-git clone https://github.com/FFmpeg/FFmpeg
+git clone -b master https://github.com/glfw/glfw
+git clone -b master https://github.com/libsdl-org/SDL
+git clone -b master https://github.com/FFmpeg/FFmpeg
 #
-git clone https://github.com/colinpaint/paint
-git clone https://github.com/colinpaint/myimgui
-#git clone https://github.com/ramcorder/ramcorder
-#git clone https://github.com/ocornut/imgui
+git clone -b master https://github.com/colinpaint/paint
+git clone -b master https://github.com/colinpaint/myimgui
+#git clone -b master https://github.com/ramcorder/ramcorder
+git clone -b master https://github.com/ocornut/imgui
 #
 # quake 
 #sudo apt -y install libgl1-mesa-dev libglu1-mesa-dev libxxf86dga-dev libxxf86vm-dev 
@@ -77,19 +77,19 @@ else
   #sudo systemctl status ssh
   #sudo ufw allow ssh
   #  
-  #git clone https://github.com/axiomatic-systems/Bento4.git
+  #git clone -b master https://github.com/axiomatic-systems/Bento4.git
   #
-  #git clone https://github.com/Intel-Media-SDK/MediaSDK
-  #git clone https://github.com/intel/libva
-  #git clone https://github.com/intel/libva-utils
+  #git clone -b master https://github.com/Intel-Media-SDK/MediaSDK
+  #git clone -b master https://github.com/intel/libva
+  #git clone -b master https://github.com/intel/libva-utils
   #
   # intel vaapi/mfx dev
   #sudo apt -y install libmfx-dev 
-  #git clone https://github.com/intel/gmmlib
-  #git clone https://github.com/intel/media-driver
-  #git clone https://github.com/intel/intel-vaapi-driver
-  #git clone https://github.com/mpv-player/mpv
-  #git clone https://gitlab.freedesktop.org/drm/igt-gpu-tools
+  #git clone -b master https://github.com/intel/gmmlib
+  #git clone -b master https://github.com/intel/media-driver
+  #git clone -b master https://github.com/intel/intel-vaapi-driver
+  #git clone -b master https://github.com/mpv-player/mpv
+  #git clone -b master https://gitlab.freedesktop.org/drm/igt-gpu-tools
   #
   # renderdoc dev
   #git clone https://github.com/baldurk/renderdoc   

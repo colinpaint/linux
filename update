@@ -24,8 +24,7 @@ cd build
 cmake ..
 make -j4
 sudo make install
-cd ..
-cd ..
+cd ../..
 # ---------------------
 # glfw
 #
@@ -36,8 +35,7 @@ cd build
 cmake ..
 make -j4
 sudo make install
-cd ..
-cd ..
+cd ../..
 # ---------------------
 # imgui
 #
@@ -53,8 +51,7 @@ mkdir -p build
 cd build
 cmake ..
 make -j4
-cd ..
-cd ..
+cd ../..
 # ---------------------
 # paint
 #
@@ -64,54 +61,48 @@ mkdir -p build
 cd build
 cmake ..
 make -j4
-cd ..
-cd ..
+cd ../..
 # ---------------------
 # pico
 #
 cd pico
+#
 cd pico-examples
 git pull
 mkdir -p build
 cd build
 make -j4
-cd ..
-cd ..
+cd ../..
 #
 cd pico-sdk
 git pull
 mkdir -p build
 cd build
 make -j4
-cd ..
-cd ..
+cd ../..
 #
 cd pico-extras
 git pull
 cd build
 make -j4
-cd ..
-cd ..
+cd ../..
 #
 cd picosystem
 git pull
 mkdir -p build
 cd build
 make -j4
-cd ..
-cd ..
+cd ../..
 #
 cd pimoroni-pico
 git pull
 mkdir -p build
 cd build
 make -j4
-cd ..
-cd ..
+cd ../..
 #
 cd ZuluSCSI-firmware
 git pull
-cd ..
 cd ..
 #
 cd ../linux
