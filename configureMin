@@ -9,6 +9,7 @@ cd build
 ../configure \
   --disable-decoders --disable-encoders --disable-filters --disable-parsers --disable-protocols --disable-bsfs \
   --disable-demuxers --disable-muxers   --disable-indevs  --disable-outdevs --disable-doc --disable-ffprobe \
+  --disable-vaapi \
   --enable-protocol=concat,file \
   --enable-demuxer=mpegts,mp2,mp3,aac,ac3,h264,pcm_s16le,mjpeg,dvbsub \
   --enable-parser=aac,ac3,h264,mpeg4video,mpegvideo,mpegaudio,mjpeg,aac_latm,dvbsub \
@@ -21,6 +22,9 @@ cd build
   --enable-nonfree \
   --extra-cflags='-march=native' 
 #
+#  --disable-dxva2 \ 
+#  --disable-vda   \         
+#  --disable-vdpau \
 #  --enable-libmfx 
 #
 cd ../../linux
