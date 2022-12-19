@@ -53,9 +53,9 @@ git clone https://github.com/colinpaint/myimgui
 #git clone https://github.com/ramcorder/ramcorder
 #
 # quake 
-#sudo apt -y install libgl1-mesa-dev libglu1-mesa-dev libxxf86dga-dev libxxf86vm-dev 
-#sudo apt -y install libx11-xcb-dev libxcb1-dev libcurl4-openssl-dev 
-#sudo apt -y install libopenal-dev libopus-dev libvorbis-dev libopusfile-dev libmad0-dev 
+sudo apt -y install libgl1-mesa-dev libglu1-mesa-dev libxxf86dga-dev libxxf86vm-dev 
+sudo apt -y install libx11-xcb-dev libxcb1-dev libcurl4-openssl-dev 
+sudo apt -y install libopenal-dev libopus-dev libvorbis-dev libopusfile-dev libmad0-dev 
 #git clone https://github.com/Novum/vkQuake
 #git clone https://github.com/kondrak/vkQuake2
 #git clone https://github.com/suijingfeng/vkQuake3
