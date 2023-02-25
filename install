@@ -6,9 +6,11 @@ sudo apt -y autoremove
 sudo apt -y autoclean
 # 
 # dev tools
-sudo apt -y install build-essential git g++ clang nasm gdb binutils-dev pkg-conf
+sudo apt -y install build-essential git g++ clang nasm gdb binutils-dev 
+sudo apt -y pkg-conf
 sudo apt -y install cmake cmake-curses-gui
-sudo apt -y install autoconf libtool gedit   
+sudo apt -y install autoconf libtool gedit 
+sudo apt -y install libtbb-dev  
 #
 # utils
 sudo apt -y install htop iotop hardinfo psensor acpi iotop nethogs gparted 
