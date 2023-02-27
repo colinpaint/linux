@@ -19,6 +19,11 @@ sudo apt -y install htop iotop hardinfo psensor acpi iotop nethogs gparted
 sudo apt -y install libglfw3-dev libgles2-mesa-dev mesa-utils libasound2-dev 
 sudo apt -y install libglew-dev freeglut3 freeglut3-dev
 #
+# X11
+sudo apt -y install libgl1-mesa-dev libglu1-mesa-dev libxxf86dga-dev libxxf86vm-dev 
+sudo apt -y install libx11-xcb-dev libxcb1-dev libcurl4-openssl-dev 
+sudo apt -y install libopenal-dev libopus-dev libvorbis-dev libopusfile-dev libmad0-dev 
+#
 # sdl
 sudo apt -y install libsdl2-dev libsdl2-image-dev
 #
@@ -36,28 +41,24 @@ sudo apt -y install libva-dev vainfo
 #
 # mpv
 sudo apt -y install mpv
-
+#
 # vulkan
 sudo apt -y install vulkan-tools libvulkan-dev vulkan-validationlayers-dev spirv-tools
-#
 #
 # samba
 #sudo apt -y install samba smbclient libsmbclient-dev 
 #
 cd ..
-git clone https://github.com/libsdl-org/SDL
-git clone -b master https://github.com/glfw/glfw
 git clone -b master https://github.com/FFmpeg/FFmpeg
+git clone -b master https://github.com/glfw/glfw
 git clone -b master https://github.com/ocornut/imgui
-#
 git clone https://github.com/colinpaint/paint
 git clone https://github.com/colinpaint/myimgui
+#
+#git clone https://github.com/libsdl-org/SDL
 #git clone https://github.com/ramcorder/ramcorder
 #
 # quake 
-sudo apt -y install libgl1-mesa-dev libglu1-mesa-dev libxxf86dga-dev libxxf86vm-dev 
-sudo apt -y install libx11-xcb-dev libxcb1-dev libcurl4-openssl-dev 
-sudo apt -y install libopenal-dev libopus-dev libvorbis-dev libopusfile-dev libmad0-dev 
 #git clone https://github.com/Novum/vkQuake
 #git clone https://github.com/kondrak/vkQuake2
 #git clone https://github.com/suijingfeng/vkQuake3
