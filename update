@@ -15,17 +15,6 @@ fi
 #
 cd ..
 # ---------------------
-# SDL
-#
-cd SDL
-git pull
-mkdir -p build
-cd build
-cmake ..
-make -j4
-sudo make install
-cd ../..
-# ---------------------
 # glfw
 #
 cd glfw
@@ -61,6 +50,17 @@ mkdir -p build
 cd build
 cmake ..
 make -j4
+cd ../..
+# ---------------------
+# SDL
+#
+cd SDL
+git pull
+mkdir -p build
+cd build
+cmake ..
+make -j4
+sudo make install
 cd ../..
 # ---------------------
 # pico
