@@ -21,22 +21,29 @@ cd /mnt/c/projects/linux
 sudo apt install -y samba samba-common-bin
 sudo mkdir /mnt/mydrive/shared
 sudo chmod -R 777 /mnt/mydrive/shared
-sudo nano /etc/samba/smb.conf
 
-[shared]
-path=/mnt/mydrive/shared
-writeable=Yes
-create mask=0777
-directory mask=0777
-public=no
+cd /etc/samba
+sudo nano smb.conf
 
+Add -
+
+[pi]
+  comment = piFolder
+  path = /home/pi
+  browseable = yes
+  read only = no
+  writeable = yes
+  public = no
+  valid users = pi colin
+  create mask = 0777
+  directory mask = 0777
+  veto oplock files = /*.ts/
+
+testparm
 sudo systemctl restart smbd
 sudo smbpasswd -a pi
 
-
-{{{  config sacd /etc/samba
-sudo nano smb.conf
-{{{  smb.conf
+{{{  full smb.conf
 [global]
    workgroup = WORKGROUP
    dns proxy = no
@@ -60,7 +67,7 @@ sudo nano smb.conf
    directory mask = 0700
    valid users = %S
 [pi]
-  comment = Pifolder
+  comment = piFolder
   path = /home/pi
   browseable = yes
   read only = no
@@ -68,11 +75,8 @@ sudo nano smb.conf
   create mask = 0777
   directory mask = 0777
   veto oplock files = /*.ts/
+}}}
 
-}}}
-testparm
-sudo smbpasswd -a pi
-}}}
 {{{  fstab
 sudo nano /etc/fstab
 

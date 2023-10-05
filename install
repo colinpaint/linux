@@ -6,32 +6,30 @@ sudo apt -y autoremove
 sudo apt -y autoclean
 # 
 # dev tools
-sudo apt -y install build-essential git cmake cmake-curses-gui
-sudo apt -y install autoconf libtool gedit 
+sudo apt -y install build-essential git cmake cmake-curses-gui autoconf libtool  
 sudo apt -y install g++ clang nasm gdb binutils-dev 
 sudo apt -y install pkg-conf
 #
 # utils
-sudo apt -y install psensor gparted 
-sudo apt -y install libtbb-dev  
+sudo apt -y install htop psensor gparted gedit
 #
-# opengl 
-sudo apt -y install libglfw3-dev libgles2-mesa-dev mesa-utils libasound2-dev 
-sudo apt -y install libglew-dev freeglut3 freeglut3-dev
+# tbb
+sudo apt -y install libtbb-dev  
 #
 # X11
 sudo apt -y install libgl1-mesa-dev libglu1-mesa-dev libxxf86dga-dev libxxf86vm-dev 
 sudo apt -y install libx11-xcb-dev libxcb1-dev libcurl4-openssl-dev 
 sudo apt -y install libopenal-dev libopus-dev libvorbis-dev libopusfile-dev libmad0-dev 
 #
+# opengl 
+sudo apt -y install libglfw3-dev libgles2-mesa-dev mesa-utils libasound2-dev 
+sudo apt -y install libglew-dev freeglut3 freeglut3-dev
+#
 # sdl
 sudo apt -y install libsdl2-dev libsdl2-image-dev
 #
 # freetype
 sudo apt -y install libfreetype6-dev libfreetype6
-#
-# ffmpeg libs
-sudo apt -y install libfdk-aac-dev libx264-dev 
 #
 # mpv
 sudo apt -y install mpv 
@@ -42,12 +40,15 @@ sudo apt -y install samba samba-common-bin smbclient libsmbclient-dev
 # wayland
 #sudo apt -y install libwayland-dev libxkbcommon-dev wayland-protocols extra-cmake-modules
 #
+# ffmpeg 
+sudo apt -y install libfdk-aac-dev libx264-dev 
+git clone -b master https://github.com/FFmpeg/FFmpeg
+#
 # github clones
 cd ..
 git clone -b master https://github.com/glfw/glfw
-git clone https://github.com/libsdl-org/SDL
+git clone -b master https://github.com/libsdl-org/SDL
 git clone -b master https://github.com/ocornut/imgui
-git clone -b master https://github.com/FFmpeg/FFmpeg
 git clone https://github.com/colinpaint/paint
 git clone https://github.com/colinpaint/myimgui
 #
