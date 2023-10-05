@@ -31,9 +31,7 @@ Add -
   comment = piFolder
   path = /home/pi
   browseable = yes
-  read only = no
   writeable = yes
-  public = no
   valid users = pi colin
   create mask = 0777
   directory mask = 0777
