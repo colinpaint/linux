@@ -6,14 +6,14 @@ sudo apt -y autoremove
 sudo apt -y autoclean
 # 
 # dev tools
-sudo apt -y install build-essential git g++ clang nasm gdb binutils-dev 
-sudo apt -y pkg-conf
-sudo apt -y install cmake cmake-curses-gui
+sudo apt -y install build-essential git cmake cmake-curses-gui
 sudo apt -y install autoconf libtool gedit 
-sudo apt -y install libtbb-dev  
+sudo apt -y install g++ clang nasm gdb binutils-dev 
+sudo apt -y install pkg-conf
 #
 # utils
-sudo apt -y install htop iotop hardinfo psensor acpi iotop nethogs gparted 
+sudo apt -y install psensor gparted 
+sudo apt -y install libtbb-dev  
 #
 # opengl 
 sudo apt -y install libglfw3-dev libgles2-mesa-dev mesa-utils libasound2-dev 
@@ -33,30 +33,23 @@ sudo apt -y install libfreetype6-dev libfreetype6
 # ffmpeg libs
 sudo apt -y install libfdk-aac-dev libx264-dev 
 #
-# wayland
-sudo apt -y install libwayland-dev libxkbcommon-dev wayland-protocols extra-cmake-modules
-#
-# vaapi
-sudo apt -y install libva-dev vainfo
-#
 # mpv
-sudo apt -y install mpv
-#
-# vulkan
-sudo apt -y install vulkan-tools libvulkan-dev vulkan-validationlayers-dev spirv-tools
+sudo apt -y install mpv 
 #
 # samba
-#sudo apt -y install samba smbclient libsmbclient-dev 
+sudo apt -y install samba smbclient libsmbclient-dev 
 #
+# wayland
+#sudo apt -y install libwayland-dev libxkbcommon-dev wayland-protocols extra-cmake-modules
+#
+# github clones
 cd ..
-git clone -b master https://github.com/FFmpeg/FFmpeg
 git clone -b master https://github.com/glfw/glfw
+git clone https://github.com/libsdl-org/SDL
 git clone -b master https://github.com/ocornut/imgui
+git clone -b master https://github.com/FFmpeg/FFmpeg
 git clone https://github.com/colinpaint/paint
 git clone https://github.com/colinpaint/myimgui
-#
-#git clone https://github.com/libsdl-org/SDL
-#git clone https://github.com/ramcorder/ramcorder
 #
 # quake 
 #git clone https://github.com/Novum/vkQuake
@@ -68,39 +61,33 @@ git clone https://github.com/colinpaint/myimgui
 OS=$(uname -m)
 echo "$OS"
 if [ "$OS" == "aarch64" ]; then
-  echo "Installing raspberry pi"
+  echo "install raspberry pi"
   sudo apt -y install libvulkan1 mesa-vulkan-drivers
   #git clone https://github.com/colinporth/gpio  
   #git clone https://github.com/colinporth/opt
 else 
-  echo "Installing not raspberry pi"
+  echo "install x86"
+   # vulkan
+  sudo apt -y install libvulkan1 mesa-vulkan-drivers vulkan-tools libvulkan-dev vulkan-validationlayers-dev spirv-tools
   #
   # enable ssh
   #sudo apt -y install openssh-server
   #sudo systemctl status ssh
   #sudo ufw allow ssh
   #  
-  #git clone -b master https://github.com/axiomatic-systems/Bento4.git
-  #
+  # mediaSDK
   #git clone -b master https://github.com/Intel-Media-SDK/MediaSDK
+  #
+  # vaapi
+  #sudo apt -y install libva-dev vainfo
   #git clone -b master https://github.com/intel/libva
   #git clone -b master https://github.com/intel/libva-utils
-  #
-  # intel vaapi/mfx dev
   #sudo apt -y install libmfx-dev 
   #git clone -b master https://github.com/intel/gmmlib
   #git clone -b master https://github.com/intel/media-driver
   #git clone -b master https://github.com/intel/intel-vaapi-driver
   #git clone -b master https://github.com/mpv-player/mpv
   #git clone -b master https://gitlab.freedesktop.org/drm/igt-gpu-tools
-  #
-  # renderdoc dev
-  #git clone https://github.com/baldurk/renderdoc   
-  #sudo apt -y install libx11-dev libx11-xcb-dev mesa-common-dev libgl1-mesa-dev libxcb-keysyms1-dev libpcre3-dev 
-  #sudo apt -y install python3-dev bison automake
-  #sudo apt -y install qt5-qmake libqt5svg5-dev libqt5x11extras5-dev 
-  #cmake -DCMAKE_BUILD_TYPE=Debug -Bbuild -H.
-  #make -C build
 fi
 #
 mkdir -p tv

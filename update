@@ -1,6 +1,5 @@
 set -v
 #
-#
 sudo apt -y update
 sudo apt -y full-upgrade
 sudo apt -y autoremove
@@ -8,15 +7,14 @@ sudo apt -y autoremove
 OS=$(uname -m)
 echo "$OS"
 if [ "$OS" == "aarch64" ]; then
-  echo "raspberry pi"
- else 
-  echo "Not raspberry pi"
+  echo "update raspberryPi"
+else 
+  echo "update x86"
 fi
 #
 cd ..
-# ---------------------
-# glfw
 #
+# glfw
 cd glfw
 git pull
 mkdir -p build
@@ -25,15 +23,13 @@ cmake ..
 make -j4
 sudo make install
 cd ../..
-# ---------------------
+# 
 # imgui
-#
 cd imgui
 git pull
 cd ..
-# ---------------------
-# myimgui
 #
+# myimgui
 cd myimgui
 git pull
 mkdir -p build
@@ -41,9 +37,8 @@ cd build
 cmake ..
 make -j4
 cd ../..
-# ---------------------
-# paint
 #
+# paint
 cd paint
 git pull
 mkdir -p build
@@ -51,9 +46,8 @@ cd build
 cmake ..
 make -j4
 cd ../..
-# ---------------------
-# SDL
 #
+# SDL
 cd SDL
 git pull
 mkdir -p build
@@ -62,47 +56,5 @@ cmake ..
 make -j4
 sudo make install
 cd ../..
-# ---------------------
-# pico
 #
-cd pico
-#
-cd pico-examples
-git pull
-mkdir -p build
-cd build
-make -j4
-cd ../..
-#
-cd pico-sdk
-git pull
-mkdir -p build
-cd build
-make -j4
-cd ../..
-#
-cd pico-extras
-git pull
-cd build
-make -j4
-cd ../..
-#
-cd picosystem
-git pull
-mkdir -p build
-cd build
-make -j4
-cd ../..
-#
-cd pimoroni-pico
-git pull
-mkdir -p build
-cd build
-make -j4
-cd ../..
-#
-cd ZuluSCSI-firmware
-git pull
-cd ..
-#
-cd ../linux
+cd linux

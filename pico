@@ -1,6 +1,6 @@
 set -v
 #
-sudo apt install git cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential libstdc++-arm-none-eabi-newlib
+sudo apt install gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential libstdc++-arm-none-eabi-newlib
 #
 cd ..
 mkdir -p pico
@@ -9,11 +9,9 @@ cd pico
 git clone -b master https://github.com/raspberrypi/pico-sdk.git --recursive
 git clone -b master https://github.com/raspberrypi/pico-examples.git
 git clone -b master https://github.com/raspberrypi/pico-extras.git --recursive
-#
 git clone -b main https://github.com/pimoroni/pimoroni-pico.git --recursive
 git clone -b main https://github.com/pimoroni/picosystem.git
-#
-git clone https://github.com/ZuluSCSI/ZuluSCSI-firmware
+#git clone https://github.com/ZuluSCSI/ZuluSCSI-firmware
 #
 export PICO_SDK_PATH=../../pico-sdk
 #
@@ -51,4 +49,3 @@ cd build
 cmake ..
 make -j 8
 cd ../..
-
