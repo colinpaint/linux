@@ -17,25 +17,24 @@ gedit ./etc/profile
 # windows WSL point to c projects
 cd /mnt/c/projects/linux
 
-{{{  raspi-config
-sudo raspi-config
-- Change user password
-  - set password
+# samba
+sudo apt install -y samba samba-common-bin
+sudo mkdir /mnt/mydrive/shared
+sudo chmod -R 777 /mnt/mydrive/shared
+sudo nano /etc/samba/smb.conf
 
-- Network options
-  - set hostname pi
+[shared]
+path=/mnt/mydrive/shared
+writeable=Yes
+create mask=0777
+directory mask=0777
+public=no
 
-- Interfacing options
-  - enable camera
-  - enable ssh
+sudo systemctl restart smbd
+sudo smbpasswd -a pi
 
-- Advanced options
-  - memory split 128
-  - audio force 3.5
-}}}
 
-{{{  config samba
-cd /etc/samba
+{{{  config sacd /etc/samba
 sudo nano smb.conf
 {{{  smb.conf
 [global]
@@ -209,86 +208,4 @@ make
 sudo make install
 }}}
 
-{{{  install visual studio code
-from
-  https://pimylifeup.com/raspberry-pi-visual-studio-code/
-
-wget https://packagecloud.io/headmelted/codebuilds/gpgkey -O - | sudo apt-key add -
-curl -L https://raw.githubusercontent.com/headmelted/codebuilds/master/docs/installers/apt.sh | sudo bash
-}}}
-{{{  use WSL2 xfce4
-sudo apt-get install xfce4
-}}}
-{{{  build libcamera
-add to /boot/config.txt
-dtoverlay=ov5647
-dtoverlay=imx477
-dtoverlay=imx219
-core_freq_min=250
-
-sudo apt -y install libboost-dev libgnutls28-dev openssl libtiff5-dev
-sudo apt -y install meson qtbase5-dev libqt5core5a libqt5gui5 libqt5widgets5
-sudo pip3 install pyyaml
-
-git clone git://linuxtv.org/libcamera.git
-cd libcamera
-
-meson build
-cd build
-meson configure -Dpipelines=raspberrypi -Dtest=false
-cd ..
-
-sudo ninja -C build install
-
-build/src/qcam/qcam
-}}}
-{{{  build openVX
-git clone --recursive https://github.com/KhronosGroup/OpenVX-sample-impl.git
-
-cd OpenVX-sample-impl/
-python Build.py --os=Linux --venum --conf=Debug --conf_vision --enh_vision --conf_nn
-
-export OPENVX_DIR=$(pwd)/install/Linux/x32/Debug
-export VX_TEST_DATA_PATH=$(pwd)/cts/test_data/
-mkdir build-cts
-cd build-cts
-cmake -DOPENVX_INCLUDES=$OPENVX_DIR/include -DOPENVX_LIBRARIES=$OPENVX_DIR/bin/libopenvx.so\;$OPENVX_DIR/bin/libvxu.so\;pthread\;dl\;m\;rt -DOPENVX_CONFORMANCE_VISION=ON -DOPENVX_USE_ENHANCED_VISION=ON -DOPENVX_CONFORMANCE_NEURAL_NETWORKS=ON ../cts/
-cmake --build .
-LD_LIBRARY_PATH=./lib ./bin/vx_test_conformance
-
-cd ~/ && mkdir OpenVXSample-pop
-cd OpenVXSample-pop/
-git clone https://github.com/kiritigowda/openvx-samples.git
-
-export OPENVX_DIR=$(pwd)/install/Linux/x32/Debug
-mkdir pop-build && cd pop-build
-cmake -DOPENVX_INCLUDES=$OPENVX_DIR/include -DOPENVX_LIBRARIES=$OPENVX_DIR/bin/libopenvx.so ../openvx-samples/bubble-pop/
-
-./vxPop --bubble
-./vxPop --donut
-}}}
-
 sudo dd if=/dev/sda of=/dev/sdb bs=32M status=progress
-
-sudo nano /etc/rc.local
-
-{{{  mypaint
-git clone https://github.com/mypaint/libmypaint
-sudo apt -y install intltool
-sudo apt -y install libjson-c-dev
-cd libmypaint
-./autogen.sh
-./configure
-make
-sudo make install
-
-git clone https://github.com/mypaint/mypaint-brushes
-cd mypaint-brushes
-./autogen.sh
-./configure
-make
-sudo make install
-
-git clone https://github.com/mypaint/mypaint
-cd mypaint
-}}}

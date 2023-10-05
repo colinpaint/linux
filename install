@@ -37,7 +37,7 @@ sudo apt -y install libfdk-aac-dev libx264-dev
 sudo apt -y install mpv 
 #
 # samba
-sudo apt -y install samba smbclient libsmbclient-dev 
+sudo apt -y install samba samba-common-bin smbclient libsmbclient-dev
 #
 # wayland
 #sudo apt -y install libwayland-dev libxkbcommon-dev wayland-protocols extra-cmake-modules
