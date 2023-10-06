@@ -1,0 +1,32 @@
+set -v
+#
+cd ..
+#
+# ffmpeg 
+git clone -b master https://github.com/FFmpeg/FFmpeg
+#
+# github clones
+git clone -b master https://github.com/glfw/glfw
+git clone -b master https://github.com/libsdl-org/SDL
+git clone -b master https://github.com/ocornut/imgui
+git clone https://github.com/colinpaint/paint
+git clone https://github.com/colinpaint/myimgui
+#
+# quake 
+#git clone https://github.com/Novum/vkQuake
+#git clone https://github.com/kondrak/vkQuake2
+#git clone https://github.com/suijingfeng/vkQuake3
+#git clone https://github.com/drags/docker-quake2
+#git clone https://github.com/nrempel/q3-server
+#
+OS=$(uname -m)
+echo "$OS"
+if [ "$OS" == "aarch64" ]; then
+  echo "clone raspberry pi"
+  #git clone https://github.com/colinporth/gpio  
+  #git clone https://github.com/colinporth/opt
+else 
+  echo "clone x86"
+fi
+#
+cd linux

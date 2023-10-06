@@ -24,6 +24,16 @@ make -j4
 sudo make install
 cd ../..
 # 
+# SDL
+cd SDL
+git pull
+mkdir -p build
+cd build
+cmake ..
+make -j4
+sudo make install
+cd ../..
+#
 # imgui
 cd imgui
 git pull
@@ -45,16 +55,6 @@ mkdir -p build
 cd build
 cmake ..
 make -j4
-cd ../..
-#
-# SDL
-cd SDL
-git pull
-mkdir -p build
-cd build
-cmake ..
-make -j4
-sudo make install
 cd ../..
 #
 cd linux

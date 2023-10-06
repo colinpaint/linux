@@ -42,8 +42,6 @@ sudo apt -y install samba samba-common-bin smbclient libsmbclient-dev
 #
 # ffmpeg 
 sudo apt -y install libfdk-aac-dev libx264-dev 
-cd ..
-git clone -b master https://github.com/FFmpeg/FFmpeg
 #
 # github clones
 git clone -b master https://github.com/glfw/glfw
@@ -64,34 +62,11 @@ echo "$OS"
 if [ "$OS" == "aarch64" ]; then
   echo "install raspberry pi"
   sudo apt -y install libvulkan1 mesa-vulkan-drivers
-  #git clone https://github.com/colinporth/gpio  
-  #git clone https://github.com/colinporth/opt
 else 
   echo "install x86"
    # vulkan
   sudo apt -y install libvulkan1 mesa-vulkan-drivers vulkan-tools libvulkan-dev vulkan-validationlayers-dev spirv-tools
-  #
-  # enable ssh
-  #sudo apt -y install openssh-server
-  #sudo systemctl status ssh
-  #sudo ufw allow ssh
-  #  
-  # mediaSDK
-  #git clone -b master https://github.com/Intel-Media-SDK/MediaSDK
-  #
-  # vaapi
-  #sudo apt -y install libva-dev vainfo
-  #git clone -b master https://github.com/intel/libva
-  #git clone -b master https://github.com/intel/libva-utils
-  #sudo apt -y install libmfx-dev 
-  #git clone -b master https://github.com/intel/gmmlib
-  #git clone -b master https://github.com/intel/media-driver
-  #git clone -b master https://github.com/intel/intel-vaapi-driver
-  #git clone -b master https://github.com/mpv-player/mpv
-  #git clone -b master https://gitlab.freedesktop.org/drm/igt-gpu-tools
 fi
 #
 mkdir -p tv
 chmod 0777 tv
-#
-cd linux
