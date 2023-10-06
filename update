@@ -14,47 +14,47 @@ fi
 #
 cd ..
 #
-# glfw
+# update glfw
 cd glfw
 git pull
 mkdir -p build
 cd build
 cmake ..
-make -j4
+make -j6
 sudo make install
 cd ../..
 # 
-# SDL
+# update SDL
 cd SDL
 git pull
 mkdir -p build
 cd build
 cmake ..
-make -j4
+make -j6
 sudo make install
 cd ../..
 #
-# imgui
+# update imgui
 cd imgui
 git pull
 cd ..
 #
-# myimgui
+# update myimgui
 cd myimgui
 git pull
 mkdir -p build
 cd build
 cmake ..
-make -j4
+make -j6
 cd ../..
 #
-# paint
+# update paint
 cd paint
 git pull
 mkdir -p build
 cd build
 cmake ..
-make -j4
+make -j6
 cd ../..
 #
 cd linux

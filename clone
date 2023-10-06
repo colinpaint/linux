@@ -2,12 +2,10 @@ set -v
 #
 cd ..
 #
-# ffmpeg 
-git clone -b master https://github.com/FFmpeg/FFmpeg
-#
-# github clones
+# github 
 git clone -b master https://github.com/glfw/glfw
 git clone -b master https://github.com/libsdl-org/SDL
+git clone -b master https://github.com/FFmpeg/FFmpeg
 git clone -b master https://github.com/ocornut/imgui
 git clone https://github.com/colinpaint/paint
 git clone https://github.com/colinpaint/myimgui
