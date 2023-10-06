@@ -77,6 +77,22 @@ sudo smbpasswd -a pi
   veto oplock files = /*.ts/
 }}}
 
+ sudo apt install ssh
+ systemctl status sshd.service
+ systemctl reload sshd.service
+
+
+
+
+
+
+
+
+
+
+ sudo nano /etc/ssh/sshd_config
+
+
 {{{  fstab
 sudo nano /etc/fstab
 
