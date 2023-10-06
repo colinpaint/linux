@@ -42,11 +42,10 @@ sudo apt -y install samba samba-common-bin smbclient libsmbclient-dev
 #
 # ffmpeg 
 sudo apt -y install libfdk-aac-dev libx264-dev 
-cd ~
+cd ..
 git clone -b master https://github.com/FFmpeg/FFmpeg
 #
 # github clones
-cd ~
 git clone -b master https://github.com/glfw/glfw
 git clone -b master https://github.com/libsdl-org/SDL
 git clone -b master https://github.com/ocornut/imgui
@@ -95,4 +94,4 @@ fi
 mkdir -p tv
 chmod 0777 tv
 #
-cd ~/linux
+cd linux
