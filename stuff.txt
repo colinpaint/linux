@@ -1,22 +1,24 @@
-# ssh to pi
-ssh -l username hostname
-ssh -l pi       pi4
+# open ssh to pi
+ssh -l username hostname(pi4)
+#
+# enable ssh server
+sudo apt install -y ssh
 #
 # pi boot params
 sudo nano /boot/cmdline.txt
 logo.nologo
 init=/usr/lib/raspi-config/init_resize.sh
-
+#
 # pi config
 sudo nano /boot/config.txt
 lcd_rotate=2
-
+#
 # pi login script
 gedit ./etc/profile
-
+#
 # windows WSL point to c projects
 cd /mnt/c/projects/linux
-
+#
 # samba
 sudo apt install -y samba samba-common-bin
 sudo mkdir /mnt/mydrive/shared
