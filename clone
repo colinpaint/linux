@@ -3,10 +3,10 @@ set -v
 cd ..
 #
 # github 
-git clone -b master https://github.com/glfw/glfw
-git clone -b master https://github.com/libsdl-org/SDL
-git clone -b master https://github.com/FFmpeg/FFmpeg
-git clone -b master https://github.com/ocornut/imgui
+git clone https://github.com/glfw/glfw
+git clone https://github.com/libsdl-org/SDL
+git clone https://github.com/FFmpeg/FFmpeg
+git clone https://github.com/ocornut/imgui
 git clone https://github.com/colinpaint/paint
 git clone https://github.com/colinpaint/myimgui
 #
