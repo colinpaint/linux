@@ -3,6 +3,8 @@ ssh -l username hostname(pi4)
 #
 # enable ssh server
 sudo apt install -y ssh
+systemctl status sshd.service
+systemctl reload sshd.service
 #
 # pi boot params
 sudo nano /boot/cmdline.txt
@@ -19,31 +21,17 @@ gedit ./etc/profile
 # windows WSL point to c projects
 cd /mnt/c/projects/linux
 #
-# samba
+{{{  samba
 sudo apt install -y samba samba-common-bin
-sudo mkdir /mnt/mydrive/shared
-sudo chmod -R 777 /mnt/mydrive/shared
-
 cd /etc/samba
 sudo nano smb.conf
-
-Add -
-
-[pi]
-  comment = piFolder
-  path = /home/pi
-  browseable = yes
-  writeable = yes
-  valid users = pi colin
-  create mask = 0777
-  directory mask = 0777
-  veto oplock files = /*.ts/
-
 testparm
 sudo systemctl restart smbd
 sudo smbpasswd -a pi
 
-{{{  full smb.conf
+use full smb.conf
+add [pi] section to smb.conf
+
 [global]
    workgroup = WORKGROUP
    dns proxy = no
@@ -59,39 +47,25 @@ sudo smbpasswd -a pi
    passwd chat = *Enter\snew\s*\spassword:* %n\n *Retype\snew\s*\spassword:* %n\n *password\supdated\ssu                                                                                                           ccessfully* .
    pam password change = yes
    map to guest = bad user
+
 [homes]
-   comment = Home Directories
+   comment = homeFolders
    browseable = no
    read only = yes
    create mask = 0700
    directory mask = 0700
    valid users = %S
+
 [pi]
   comment = piFolder
   path = /home/pi
   browseable = yes
-  read only = no
+  writeable = yes
   valid users = pi colin
   create mask = 0777
   directory mask = 0777
   veto oplock files = /*.ts/
 }}}
-
-sudo apt install ssh
-systemctl status sshd.service
-systemctl reload sshd.service
-
-
-
-
-
-
-
-
-
-
- sudo nano /etc/ssh/sshd_config
-
 
 {{{  fstab
 sudo nano /etc/fstab
