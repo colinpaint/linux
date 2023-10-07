@@ -77,9 +77,9 @@ sudo smbpasswd -a pi
   veto oplock files = /*.ts/
 }}}
 
- sudo apt install ssh
- systemctl status sshd.service
- systemctl reload sshd.service
+sudo apt install ssh
+systemctl status sshd.service
+systemctl reload sshd.service
 
 
 
