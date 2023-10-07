@@ -56,5 +56,14 @@ cd build
 cmake ..
 make -j6
 cd ../..
+
+# update mini
+cd mini
+git pull
+mkdir -p build
+cd build
+cmake ..
+make -j6
+cd ../..
 #
 cd linux

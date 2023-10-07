@@ -21,6 +21,9 @@ gedit ./etc/profile
 # windows WSL point to c projects
 cd /mnt/c/projects/linux
 #
+# rapberry pi git pull whinge
+git config --global pull.ff only
+
 {{{  samba
 sudo apt install -y samba samba-common-bin
 cd /etc/samba
