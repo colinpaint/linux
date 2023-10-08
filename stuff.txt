@@ -1,3 +1,5 @@
+git clone https://github.com/ermig1979/Simd
+
 sudo apt install tigervnc-standalone-server tigervnc-xorg-extension tigervnc-viewer
 vncpasswd
 vncserver
