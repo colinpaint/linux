@@ -6,10 +6,14 @@ cd ..
 git clone https://github.com/glfw/glfw
 git clone https://github.com/libsdl-org/SDL
 git clone https://github.com/FFmpeg/FFmpeg
+#
 git clone https://github.com/ocornut/imgui
+#
 git clone https://github.com/colinpaint/paint
 git clone https://github.com/colinpaint/mini
 git clone https://github.com/colinpaint/myimgui
+#
+git clone https://github.com/ermig1979/Simd
 #
 # quake 
 #git clone https://github.com/Novum/vkQuake
