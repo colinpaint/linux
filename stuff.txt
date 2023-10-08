@@ -1,3 +1,9 @@
+sudo apt install tigervnc-standalone-server tigervnc-xorg-extension tigervnc-viewer
+vncpasswd
+vncserver
+vncserver -depth {8|16|24|32} -geometry {width}x{height}
+vncserver -depth 32 -geometry 1680x1050
+
 # open ssh to pi
 ssh -l username hostname(pi4)
 #

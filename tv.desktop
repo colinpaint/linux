@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=tv
+GenericName=tvApp
+Comment=telly app
+Exec=/home/pi/paint/build/telly
+
+

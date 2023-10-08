@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=mini
+GenericName=miniApp
+Comment=mini paint app
+Exec=/home/pi/mini/build/mini full /home/pi/mini/piccies/burger.jpg
+
