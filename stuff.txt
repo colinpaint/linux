@@ -1,6 +1,4 @@
-git clone https://github.com/ermig1979/Simd
-git clone https://github.com/oneapi-src/oneTBB
-
+# tiger vncserver
 sudo apt install tigervnc-standalone-server tigervnc-xorg-extension tigervnc-viewer
 vncpasswd
 vncserver

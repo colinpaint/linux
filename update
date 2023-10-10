@@ -1,9 +1,5 @@
 set -v
 #
-sudo apt -y update
-sudo apt -y full-upgrade
-sudo apt -y autoremove
-#
 OS=$(uname -m)
 echo "$OS"
 if [ "$OS" == "aarch64" ]; then
@@ -12,7 +8,43 @@ else
   echo "update x86"
 fi
 #
+sudo apt -y update
+sudo apt -y full-upgrade
+sudo apt -y autoremove
+#
 cd ..
+#
+# update paint
+cd paint
+git pull
+mkdir -p build
+cd build
+cmake ..
+make -j6
+cd ../..
+
+# update mini
+cd mini
+git pull
+mkdir -p build
+cd build
+cmake ..
+make -j6
+cd ../..
+#
+# update imgui
+cd imgui
+git pull
+cd ..
+#
+# update myimgui
+cd myimgui
+git pull
+mkdir -p build
+cd build
+cmake ..
+make -j6
+cd ../..
 #
 # update glfw
 cd glfw
@@ -32,38 +64,6 @@ cd build
 cmake ..
 make -j6
 sudo make install
-cd ../..
-#
-# update imgui
-cd imgui
-git pull
-cd ..
-#
-# update myimgui
-cd myimgui
-git pull
-mkdir -p build
-cd build
-cmake ..
-make -j6
-cd ../..
-#
-# update paint
-cd paint
-git pull
-mkdir -p build
-cd build
-cmake ..
-make -j6
-cd ../..
-
-# update mini
-cd mini
-git pull
-mkdir -p build
-cd build
-cmake ..
-make -j6
 cd ../..
 #
 cd linux
