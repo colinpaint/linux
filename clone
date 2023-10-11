@@ -4,7 +4,6 @@ cd ..
 #
 # github 
 git clone https://github.com/glfw/glfw
-git clone https://github.com/libsdl-org/SDL
 git clone https://github.com/FFmpeg/FFmpeg
 #
 git clone https://github.com/ocornut/imgui

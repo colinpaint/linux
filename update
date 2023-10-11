@@ -56,14 +56,4 @@ make -j6
 sudo make install
 cd ../..
 # 
-# update SDL
-cd SDL
-git pull
-mkdir -p build
-cd build
-cmake ..
-make -j6
-sudo make install
-cd ../..
-#
 cd linux
