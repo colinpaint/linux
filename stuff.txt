@@ -13,6 +13,8 @@ sudo apt install -y ssh
 systemctl status sshd.service
 systemctl reload sshd.service
 #
+# cmdline
+console=serial0,115200 console=tty1 root=PARTUUID=e0913e56-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait logo.nologo usb-storage.quirks=152d:0578:u.
 # pi boot params
 sudo nano /boot/cmdline.txt
 logo.nologo
