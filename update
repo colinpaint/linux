@@ -22,6 +22,15 @@ cd build
 cmake ..
 make -j6
 cd ../..
+#
+# update ffplay
+cd ffplay
+git pull
+mkdir -p build
+cd build
+cmake ..
+make -j6
+cd ../..
 
 # update mini
 cd mini

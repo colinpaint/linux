@@ -10,6 +10,7 @@ git clone https://github.com/ocornut/imgui
 #
 git clone https://github.com/colinpaint/paint
 git clone https://github.com/colinpaint/mini
+git clone https://github.com/colinpaint/ffplay
 git clone https://github.com/colinpaint/myimgui
 #
 git clone https://github.com/ermig1979/Simd
