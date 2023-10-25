@@ -56,3 +56,6 @@ fi
 #
 mkdir -p tv
 chmod 0777 tv
+#
+sudo cp linux/dvbFw/dvb*.fw /lib/firmware
+
