@@ -12,26 +12,32 @@ ssh -l username hostname(pi4)
 sudo apt install -y ssh
 systemctl status sshd.service
 systemctl reload sshd.service
-#
+
 # cmdline
 console=serial0,115200 console=tty1 root=PARTUUID=e0913e56-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait logo.nologo usb-storage.quirks=152d:0578:u.
 # pi boot params
 sudo nano /boot/cmdline.txt
 logo.nologo
 init=/usr/lib/raspi-config/init_resize.sh
-#
+
 # pi config
 sudo nano /boot/config.txt
 lcd_rotate=2
-#
+
 # pi login script
 gedit ./etc/profile
-#
+
 # windows WSL point to c projects
 cd /mnt/c/projects/linux
-#
+
 # rapberry pi git pull whinge
 git config --global pull.ff only
+
+# RealVNC edit:
+sudo nano .config/wayvnc/config
+  enable_auth=true
+to
+  enable_auth=false
 
 {{{  samba
 sudo apt install -y samba samba-common-bin
@@ -72,7 +78,7 @@ add [pi] section to smb.conf
   comment = piFolder
   path = /home/pi
   browseable = yes
-  writeable = yes
+  read only = no
   valid users = pi colin
   create mask = 0777
   directory mask = 0777
