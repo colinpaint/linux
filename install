@@ -9,6 +9,7 @@ sudo apt -y autoclean
 sudo apt -y install build-essential git cmake cmake-curses-gui autoconf libtool  
 sudo apt -y install g++ clang nasm gdb binutils-dev 
 sudo apt -y install pkg-conf
+sudo apt -y install meson
 #
 # utils
 sudo apt -y install htop psensor gparted gedit net-tools
