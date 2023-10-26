@@ -5,6 +5,10 @@ cd ..
 # github 
 git clone https://github.com/glfw/glfw
 git clone https://github.com/FFmpeg/FFmpeg
+git clone https://github.com/libsdl-org/SDL
+git clone https://github.com/libsdl-org/sdl2-compat
+git clone https://github.com/kbingham/libcamera
+git clone https://github.com/raspberrypi/libcamera-apps
 #
 git clone https://github.com/ocornut/imgui
 #
