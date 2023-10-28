@@ -55,8 +55,10 @@ else
   sudo apt -y install libvulkan1 mesa-vulkan-drivers vulkan-tools libvulkan-dev vulkan-validationlayers-dev spirv-tools
 fi
 #
+cd ..
 mkdir -p tv
 chmod 0777 tv
+cd linux
 #
 sudo cp --verbose dvbFw/dvb*.fw /lib/firmware
 
