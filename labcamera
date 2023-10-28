@@ -1,51 +1,45 @@
-sudo apt install -y libcamera-dev libjpeg-dev libtiff5-dev
+sudo apt install -y meson ninja-build
+sudo apt install -y libegl1-mesa-dev
+sudo apt install -y libboost-dev libboost-program-options-dev libdrm-dev libexif-dev
 sudo apt install -y libcamera-dev libepoxy-dev libjpeg-dev libtiff5-dev
-sudo apt install -y qtbase5-dev libqt5core5a libqt5gui5 libqt5widgets5
-sudo apt install libavcodec-dev libavdevice-dev libavformat-dev libswresample-dev
 #
 sudo apt install -y python3-pip git python3-jinja2
-sudo apt install -y libboost-dev
-sudo apt install -y libgnutls28-dev openssl libtiff5-dev pybind11-dev
-sudo apt install -y qtbase5-dev libqt5core5a libqt5gui5 libqt5widgets5
-sudo apt install -y meson cmake
 sudo apt install -y python3-yaml python3-ply
-#
+sudo apt install -y libgnutls28-dev openssl pybind11-dev
+sudo apt install -y qtbase5-dev libqt5core5a libqt5gui5 libqt5widgets5
 sudo apt install -y libglib2.0-dev libgstreamer-plugins-base1.0-dev
 #
-cd 
+#sudo apt install libavcodec-dev libavdevice-dev libavformat-dev libswresample-dev
+#
+cd ..
+#
+# libcamera
 git clone https://github.com/raspberrypi/libcamera.git
 cd libcamera
-#
 meson setup build --buildtype=release -Dpipelines=rpi/vc4,rpi/pisp -Dipas=rpi/vc4,rpi/pisp -Dv4l2=true -Dgstreamer=enabled -Dtest=false -Dlc-compliance=disabled -Dcam=disabled -Dqcam=disabled -Ddocumentation=disabled -Dpycamera=enabled
-#
-# use -j 2 on Raspberry Pi 3 or earlier devices
 ninja -C build   
 sudo ninja -C build install
-#
+cd ..
+
 # libexpoxy
-sudo apt install -y libegl1-mesa-dev
-cd
 git clone https://github.com/anholt/libepoxy.git
 cd libepoxy
-mkdir _build
-cd _build
+mkdir build
+cd build
 meson
 ninja
 sudo ninja install
-#
+cd ../..
+
 # libcamera-apps
-sudo apt install -y cmake libboost-program-options-dev libdrm-dev libexif-dev
-sudo apt install -y meson ninja-build
-cd
 git clone https://github.com/raspberrypi/libcamera-apps.git
 cd libcamera-apps
-#
 meson setup build -Denable_libav=true -Denable_drm=true -Denable_egl=true -Denable_qt=true -Denable_opencv=false -Denable_tflite=false
 # meson setup build -Denable_libav=false -Denable_drm=true -Denable_egl=false -Denable_qt=false -Denable_opencv=false -Denable_tflite=false
-#
-meson compile -C build # use -j1 on Raspberry Pi 3 or earlier devices
+meson compile -C build 
 sudo meson install -C build
+#
 # this is only necessary on the first build
 sudo ldconfig 
 #
-cd linux
+cd ../linux
