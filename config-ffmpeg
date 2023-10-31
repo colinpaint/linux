@@ -2,12 +2,9 @@ set -v
 #
 cd ../FFmpeg
 git pull
-#
 mkdir -p build
 cd build
-#
 ../configure 
+cd ../..
 #
-cd ..
-cd ..
 cd linux
