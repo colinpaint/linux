@@ -1,44 +1,35 @@
-# tiger vncserver
-sudo apt install tigervnc-standalone-server tigervnc-xorg-extension tigervnc-viewer
-vncpasswd
-vncserver
-vncserver -depth {8|16|24|32} -geometry {width}x{height}
-vncserver -depth 32 -geometry 1680x1050
-
 # open ssh to pi
 ssh -l username hostname(pi4)
-#
-# enable ssh server
-sudo apt install -y ssh
-systemctl status sshd.service
-systemctl reload sshd.service
 
-# cmdline
-console=serial0,115200 console=tty1 root=PARTUUID=e0913e56-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait logo.nologo usb-storage.quirks=152d:0578:u.
-# pi boot params
-sudo nano /boot/cmdline.txt
-logo.nologo
-init=/usr/lib/raspi-config/init_resize.sh
+{{{  libcamera
+# libcamera-apps
+git clone https://github.com/raspberrypi/libcamera-apps.git
+cd libcamera-apps
+meson setup build -Denable_libav=false -Denable_drm=true -Denable_egl=true -Denable_qt=true -Denable_opencv=false -Denable_tflite=false
+meson compile -C build
+sudo meson install -C build
 
-# pi config
-sudo nano /boot/config.txt
-lcd_rotate=2
+# this is only necessary on the first build
+sudo ldconfig
 
-# pi login script
-gedit ./etc/profile
+# udp
+libcamera-vid -t 0 --inline --nopreview -o udp://<ip-addr>:<port>
+vlc udp://@:<port> :demux=h264
+ffplay udp://<ip-addr-of-server>:<port> -fflags nobuffer -flags low_delay -framedrop
 
-# windows WSL point to c projects
-cd /mnt/c/projects/linux
+# tcp
+libcamera-vid -t 0 --inline --nopreview --listen -o tcp://0.0.0.0:<port>
+vlc tcp/h264://<ip-addr-of-server>:<port>
+ffplay tcp://<ip-addr-of-server>:<port> -vf "setpts=N/30" -fflags nobuffer -flags low_delay -framedrop
 
-# rapberry pi git pull whinge
-git config --global pull.ff only
+# rtsp
+libcamera-vid -t 0 --inline --nopreview -o - | cvlc stream:///dev/stdin --sout '#rtp{sdp=rtsp://:8554/stream1}' :demux=h264
+vlc rtsp://<ip-addr-of-server>:8554/stream1
+ffplay rtsp://<ip-addr-of-server>:8554/stream1 -vf "setpts=N/30" -fflags nobuffer -flags low_delay -framedrop
 
-# RealVNC edit:
-sudo nano .config/wayvnc/config
-  enable_auth=true
-to
-  enable_auth=false
-
+# The H.264 target level must be set to 4.2 with the --level 4.2 argument.
+# Software colour denoise processing must be turned off with the --denoise cdn_off argument.
+}}}
 {{{  samba
 sudo apt install -y samba samba-common-bin
 cd /etc/samba
@@ -83,6 +74,45 @@ add [pi] section to smb.conf
   create mask = 0777
   directory mask = 0777
   veto oplock files = /*.ts/
+}}}
+
+{{{  tiger vncserver
+sudo apt install tigervnc-standalone-server tigervnc-xorg-extension tigervnc-viewer
+vncpasswd
+vncserver
+vncserver -depth {8|16|24|32} -geometry {width}x{height}
+vncserver -depth 32 -geometry 1680x1050
+}}}
+{{{  enable ssh server
+sudo apt install -y ssh
+systemctl status sshd.service
+systemctl reload sshd.service
+}}}
+{{{  cmdline
+console=serial0,115200 console=tty1 root=PARTUUID=e0913e56-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait logo.nologo usb-storage.quirks=152d:0578:u.
+# pi boot params
+sudo nano /boot/cmdline.txt
+logo.nologo
+init=/usr/lib/raspi-config/init_resize.sh
+}}}
+{{{  pi config
+sudo nano /boot/config.txt
+lcd_rotate=2
+}}}
+{{{  pi login script
+gedit ./etc/profile
+}}}
+{{{  windows WSL point to c projects
+cd /mnt/c/projects/linux
+}}}
+{{{  rapberry pi git pull whinge
+git config --global pull.ff only
+}}}
+{{{  RealVNC edit:
+sudo nano .config/wayvnc/config
+  enable_auth=true
+to
+  enable_auth=false
 }}}
 
 {{{  fstab
