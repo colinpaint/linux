@@ -1,0 +1,20 @@
+# 1366x768 LP101wh1
+enable_dpi_lcd=1
+#display_default_lcd=1
+gpio=0,1,4-21=a2,np
+#framebuffer_width=1366
+#framebuffer_height=768
+#
+dtoverlay=vc4-kms-dpi-generic
+dtparam=hactive=1368
+dtparam=hsync=64
+dtparam=vactive=768
+dtparam=vsync=7
+dtparam=clock-frequency=55490000
+dtparam=rgb666
+dtparam=hsync-invert
+dtparam=vsync-invert
+dtparam=pixclk-invert
+#
+# 60hz
+#dpi_timings=1368 0 0 64 0 768 0 0 7 0 0 0 0 60 0 66495000 3
