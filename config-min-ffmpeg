@@ -15,7 +15,7 @@ cd build
   --enable-parser=aac,ac3,h264,mpeg4video,mpegvideo,mpegaudio,mjpeg,aac_latm,dvbsub \
   --enable-decoder=mp2,mp3,aac,ac3,h264,mpeg2video,mpeg4,mjpeg,aac_latm,dvbsub \
   --enable-bsf=aac_adtstoasc \
-  --enable-filter=transpose,aresample \
+  --enable-filter=transpose,aresample,yadif,w3fdif \
   --enable-outdev=sdl2 \
   --enable-libfdk-aac \
   --enable-gpl \
