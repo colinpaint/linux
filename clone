@@ -3,29 +3,18 @@ set -v
 cd ..
 #
 # github 
-git clone https://github.com/glfw/glfw
 git clone https://github.com/FFmpeg/FFmpeg
-git clone https://github.com/libsdl-org/SDL
-git clone https://github.com/libsdl-org/sdl2-compat
-git clone https://github.com/kbingham/libcamera
-git clone https://github.com/raspberrypi/libcamera-apps
-#
 git clone https://github.com/ocornut/imgui
+#git clone https://github.com/glfw/glfw
+#git clone https://github.com/libsdl-org/SDL
+#git clone https://github.com/libsdl-org/sdl2-compat
+#git clone https://github.com/ermig1979/Simd
+#git clone https://github.com/oneapi-src/oneTBB
 #
 git clone https://github.com/colinpaint/paint
 git clone https://github.com/colinpaint/mini
-git clone https://github.com/colinpaint/ffplay
-git clone https://github.com/colinpaint/myimgui
-#
-git clone https://github.com/ermig1979/Simd
-git clone https://github.com/oneapi-src/oneTBB
-#
-# quake 
-#git clone https://github.com/Novum/vkQuake
-#git clone https://github.com/kondrak/vkQuake2
-#git clone https://github.com/suijingfeng/vkQuake3
-#git clone https://github.com/drags/docker-quake2
-#git clone https://github.com/nrempel/q3-server
+#git clone https://github.com/colinpaint/ffplay
+#git clone https://github.com/colinpaint/myimgui
 #
 OS=$(uname -m)
 echo "$OS"
@@ -33,6 +22,8 @@ if [ "$OS" == "aarch64" ]; then
   echo "clone raspberry pi"
   #git clone https://github.com/colinporth/gpio  
   #git clone https://github.com/colinporth/opt
+  git clone https://github.com/kbingham/libcamera
+  git clone https://github.com/raspberrypi/libcamera-apps
 else 
   echo "clone x86"
 fi

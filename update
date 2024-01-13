@@ -23,15 +23,6 @@ cmake ..
 make -j6
 cd ../..
 #
-# update ffplay
-cd ffplay
-git pull
-mkdir -p build
-cd build
-cmake ..
-make -j6
-cd ../..
-
 # update mini
 cd mini
 git pull
@@ -41,28 +32,37 @@ cmake ..
 make -j6
 cd ../..
 #
+# update ffplay
+#cd ffplay
+#git pull
+#mkdir -p build
+#cd build
+#cmake ..
+#make -j6
+#cd ../..
+#
 # update imgui
-cd imgui
-git pull
-cd ..
+#cd imgui
+#git pull
+#cd ..
 #
 # update myimgui
-cd myimgui
-git pull
-mkdir -p build
-cd build
-cmake ..
-make -j6
-cd ../..
+#cd myimgui
+#git pull
+#mkdir -p build
+#cd build
+#cmake ..
+#make -j6
+#cd ../..
 #
 # update glfw
-cd glfw
-git pull
-mkdir -p build
-cd build
-cmake ..
-make -j6
-sudo make install
-cd ../..
+#cd glfw
+#git pull
+#mkdir -p build
+#cd build
+#cmake ..
+#make -j6
+#sudo make install
+#cd ../..
 # 
 cd linux
