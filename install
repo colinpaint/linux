@@ -51,7 +51,9 @@ if [ "$OS" == "aarch64" ]; then
   sudo apt -y install libvulkan1 mesa-vulkan-drivers
 else 
   echo "install x86"
-   # vulkan
+  sudo apt -y install openssh-server
+  sudo apt -y install libglew-dev
+  # vulkan
   sudo apt -y install libvulkan1 mesa-vulkan-drivers vulkan-tools libvulkan-dev vulkan-validationlayers-dev spirv-tools
 fi
 #
