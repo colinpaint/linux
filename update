@@ -1,18 +1,25 @@
 set -v
 #
+sudo apt -y update
+sudo apt -y full-upgrade
+sudo apt -y autoremove
+#
+cd ..
+#
 OS=$(uname -m)
 echo "$OS"
 if [ "$OS" == "aarch64" ]; then
   echo "update raspberryPi"
 else 
   echo "update x86"
+  cd splat
+  git pull
+  mkdir -p build
+  cd build
+  cmake ..
+  make -j6
+  cd ../..
 fi
-#
-sudo apt -y update
-sudo apt -y full-upgrade
-sudo apt -y autoremove
-#
-cd ..
 #
 # update paint
 cd paint
@@ -31,6 +38,8 @@ cd build
 cmake ..
 make -j6
 cd ../..
+#
+#
 #
 # update ffplay
 #cd ffplay
